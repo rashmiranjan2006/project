@@ -1,44 +1,27 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
-const letterContent = `Dear My Love,
+const letterContent = `Happy Birthday mo puchuuuuu mo jibanaaa🥹🥹
+🥳🥳🥳🥳🥳💏🏻
 
-Words will never be enough to describe how much you mean to me. From the moment you walked into my life, everything changed. Colors became brighter, music became sweeter, and every ordinary day became an extraordinary adventure.
+aji to thu adhikaaaa kiyee khushi achi mane siye hauchii muuu manuchi tike dukhaa bhi achi ki tu budhi habaraa aau gote sidhi chadilu
 
-You have this magical way of making me feel like the luckiest person in the world. Your laughter is my favorite melody, your smile is my guiding light, and your love is the greatest gift I've ever received.
+20 barshaaaa raaa budhiii saha muh relation reh achii ☠️
 
-Thank you for being patient with me, for understanding me even when I couldn't understand myself, and for loving me through all my imperfections. You see the best in me even when I can't see it myself.
+matraa jahaa bhi hau muh adjust kri debii🤭 aji hot dusuchuu bayasaaa badhi badhii jibaa tu aauri asaundarr habu matraaa mun to saha akaaa rahibiiiiiii tu hott dusee nahaleeee kauu 😏
 
-On this special day, I want you to know that you are not just my girlfriend — you are my best friend, my confidant, my partner in every dream, and the love of my life.
+🥺i love youu geluuuuuu 🫶
+sabu baleeeee simiti khushii reh thaaaa jimiti tuh july 26 reh thiluuuu simiti enjoy kruthaa sabu jinsaaa 
+tu jahaa chahunchu sabu tateee miluuuu(muh bhi)
 
-Every day with you is a blessing, and I promise to spend every moment making you feel as special as you make me feel.
-
-Happy Birthday, my beautiful Valentine. Here's to many more birthdays together, many more memories to create, and an endless journey of love.
-
-Forever yours,
-With all my heart ❤️`;
+Happy birthdayyy snehaaaaaaaa🥳🥳🥳🫂🫂🫂🫂
+🫂🫂🫂🫂🫂🫂🫂🫂`;
 
 const LoveLetterSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [displayedText, setDisplayedText] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
-
-  useEffect(() => {
-    if (isInView && !isTyping) {
-      setIsTyping(true);
-      let index = 0;
-      const interval = setInterval(() => {
-        if (index < letterContent.length) {
-          setDisplayedText(letterContent.slice(0, index + 1));
-          index++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 30);
-      return () => clearInterval(interval);
-    }
-  }, [isInView, isTyping]);
+  // Show the full letter instantly
+  const displayedText = letterContent;
 
   return (
     <section className="py-20 md:py-32 px-4 relative" id="love-letter">
